@@ -1,3 +1,25 @@
+/* =================================================
+   1. BRAND SETTINGS
+   Change a colour or font here and it changes everywhere.
+================================================= */
+:root {
+  --navy: #0A1A2F;        /* main dark colour, headings and dark sections */
+  --teal: #12A594;        /* brand colour, used for shapes and highlights */
+  --teal-dark: #0F7471;   /* darker teal, safe to use for links and text */
+  --teal-light: #7DCEC4;  /* light teal, used on dark backgrounds */
+  --ice: #EEF4F3;         /* very pale teal, background of alternate sections */
+  --white: #FFFFFF;
+  --text: #2B3A50;        /* reading text, a softer navy */
+  --line: #D5DFDE;        /* thin divider lines */
+
+  --font-heading: 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+}
+
+
+/* =================================================
+   2. BASICS
+================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,408 +28,631 @@
 
 html {
   scroll-behavior: smooth;
+  /* when you click a menu link, stop the sticky menu from covering the heading */
+  scroll-padding-top: 90px;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #111;
+  font-family: var(--font-body);
+  font-size: 1.125rem;      /* 18px, comfortable for reading */
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--white);
 }
 
-/* ---------- Background Image Sections ---------- */
-.bg-img {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.overlay {
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.3rem, 5vw, 3.75rem); line-height: 1.08; }
+h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 40px; }
+h3 { font-size: 1.3rem; }
+
+a {
+  color: var(--teal-dark);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--navy);
+}
+
+/* a clear ring when someone moves around with the keyboard */
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* .wrap keeps content in a centred column with space at the sides */
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* .band gives every section the same space above and below */
+.band {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.band-ice {
+  background: var(--ice);
+}
+
+.band-navy {
+  background: var(--navy);
+  color: #D9E2E8;
+}
+
+.band-navy h2,
+.band-navy h3 {
+  color: var(--white);
+}
+
+.lead {
+  font-size: 1.25rem;
+  max-width: 34em;
+}
+
+.section-intro {
+  max-width: 36em;
+  margin-top: -16px;
+  margin-bottom: 40px;
+}
+
+.small-note {
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+.skip-link {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  left: 16px;
+  top: -60px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 100;
 }
 
-.content {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: 0 auto;      /* center all content */
-  text-align: center;  /* center all content by default */
-  padding: 0 80px;     /* matches hero spacing */
+.skip-link:focus {
+  top: 16px;
+  color: var(--white);
 }
+
 
 /* =================================================
-   HERO SPLIT LAYOUT
+   3. BUTTONS AND LINKS
 ================================================= */
-.hero-split {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 60px;
-  padding: 0 80px;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  letter-spacing: 4px;
-}
-
-.hero-text .tagline {
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-.hero-text .hero-sub {
-  max-width: 500px;
-  margin: 30px 0;
-  color: #444;
-}
-
-
-.hero-split > .hero-image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-
-/* ---------- BUTTONS ---------- */
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid #111;
-  color: #111;
+  color: var(--white);
+  background: var(--navy);
+  padding: 15px 28px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
 }
 
 .btn:hover {
-  background: #111;
-  color: #fff;
-  transform: translateY(-2px);
+  background: var(--teal-dark);
+  color: var(--white);
 }
 
-.dark-btn {
-  border: 1px solid #111;
-  color: #111;
+.btn-small {
+  padding: 11px 20px;
+  font-size: 0.95rem;
 }
 
-.dark-btn:hover {
-  background: #111;
-  color: #fff;
+.text-link {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--navy);
 }
+
 
 /* =================================================
-   SECTIONS
+   4. MENU BAR
+   position: sticky keeps it at the top while you scroll.
 ================================================= */
-.section {
-  padding: 90px 20px;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
 }
 
-.section h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 72px;
 }
 
-/* ---------- GRID ---------- */
-.grid {
+.logo-link img {
+  height: 36px;
+  width: auto;
+}
+
+.main-nav {
+  display: flex;
+  gap: 32px;
+  margin-left: auto;
+}
+
+.main-nav a {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* =================================================
+   5. HERO
+   Two columns. Words on the left, crystal on the right.
+================================================= */
+.hero {
+  padding-top: 80px;
+  padding-bottom: 96px;
+}
+
+.hero-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 64px;
+  align-items: center;
 }
 
-/* ---------- CARDS ---------- */
-.card {
-  padding: 30px;
-  border: 1px solid #ddd;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-text .lead {
+  margin-top: 28px;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 36px;
 }
 
-/* ---------- SERVICE CARDS ---------- */
-.service {
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  position: relative;
+.hero-fact {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  max-width: 34em;
 }
 
-.service h3,
-.service p {
-  position: relative;
-  z-index: 2;
+.hero-panel {
+  background: var(--navy);
+  border-radius: 28px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ---------- DARK SECTION ---------- */
-.dark {
-  background: #111;
-  color: #fff;
+.crystal {
+  width: 58%;
+  height: auto;
+  overflow: visible;
 }
 
-.dark .card {
-  border-color: #333;
+/* The one animation on the page. When the page loads, the four faces
+   of the crystal slide in from four directions and lock together.
+   --move-x and --move-y say where each face starts from. */
+.face {
+  opacity: 0;
+  animation: face-in 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 
-/* ---------- TESTIMONIAL ---------- */
-.testimonial {
-  font-style: italic;
-  color: #eee;
-}
+.face-left      { --move-x: -14px; --move-y: 8px;   animation-delay: 0.15s; }
+.face-right     { --move-x: 14px;  --move-y: 8px;   animation-delay: 0.3s; }
+.face-top-left  { --move-x: -8px;  --move-y: -14px; animation-delay: 0.5s; }
+.face-top-right { --move-x: 8px;   --move-y: -14px; animation-delay: 0.65s; }
 
-.testimonial span {
-  display: block;
-  margin-top: 10px;
-  font-style: normal;
-  font-weight: 600;
-}
-
-/* ---------- TESTIMONIALS NAVY OVERLAY ---------- */
-.testimonials .overlay {
-  background: rgba(8, 18, 40, 0.85);
-}
-
-.testimonials h2,
-.testimonials .testimonial {
-  color: #fff;
-}
-
-.testimonials .grid {
-  margin-top: 90px;
-  gap: 30px;
-}
-
-/* ---------- CONTACT ---------- */
-.contact p {
-  margin: 10px 0;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid #eee;
-}
-
-/* ---------- FADE IN ANIMATION ---------- */
-.fade-in {
-  animation: fadeUp 1s ease forwards;
-}
-
-@keyframes fadeUp {
+@keyframes face-in {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate(var(--move-x), var(--move-y));
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0, 0);
   }
 }
 
-/* =================================================
-   FULL HEIGHT SECTIONS
-================================================= */
-.full-height {
-  min-height: 100vh;
+/* Some people switch animations off on their device. Respect that. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .face { animation: none; opacity: 1; }
 }
+
 
 /* =================================================
-   WHO WE ARE SECTION - CENTER ALIGNED
+   6. SERVICES
+   Each service is a row. Name on the left, details on the right.
 ================================================= */
-.who-we-are .overlay {
-  background: rgba(8, 18, 40, 0.85);
-}
-
-.who-we-are h2,
-.who-we-are h3,
-.who-we-are p {
-  color: #fff;
-}
-
-.who-we-are h3 {
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.who-we-are .content {
-  max-width: 900px;   /* text width */
-  margin: 0 auto;     /* center horizontally */
-  text-align: center; /* center text like hero */
-  padding: 0 80px;    /* match hero section */
-}
-
-/* =================================================
-   WHY CHOOSE US ICONS
-================================================= */
-.why-grid .card {
-  text-align: center;
-}
-
-.why-grid svg {
-  width: 36px;
-  height: 36px;
-  margin-bottom: 15px;
-  stroke-width: 1.5;
-}
-
-.why-grid h3 {
-  margin-bottom: 8px;
-}
-
-.why-grid svg {
-  margin: 12px 0;
-}
-
-/* =================================================
-   PRICING SECTION
-================================================= */
-.pricing-section {
-  background: #f8f9fb;
-  text-align: center;
-}
-
-.pricing-sub {
-  max-width: 900px;
-  margin: 0 auto 40px;
-  color: #555;
-  font-size: 1rem;
-}
-
-.pricing-grid {
-  max-width: 900px;
-  margin: 0 auto;
+.service-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
-  gap: 25px;
-  align-items: start;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 48px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--line);
 }
 
-.pricing-card {
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-row:last-child {
+  border-bottom: 1px solid var(--line);
 }
 
-.pricing-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+.service-row h3 {
+  font-size: 1.6rem;
 }
 
-.pricing-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  object-fit: contain;
+.service-row p {
+  max-width: 38em;
 }
 
-/* =================================================
-   CONTACT HERO SPLIT
-================================================= */
-.contact-section {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 60px;
-  padding: 0 80px;
-  color: #111;
-  position: relative;
-}
-
-.contact-section .hero-text h2 {
-  font-size: 3rem;
-  letter-spacing: 2px;
-}
-
-.contact-section .contact p {
-  margin: 10px 0;
-  font-size: 1rem;
-}
-
-.contact-section .btn {
+/* a list where each bullet is a small teal diamond, echoing the crystal */
+.tick-list {
+  list-style: none;
   margin-top: 20px;
 }
 
-/* ✅ BACKGROUND IMAGE HANDLING (FIX) */
-.contact-section .hero-image {
+.tick-list li {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  min-height: 420px;
+  padding-left: 26px;
+  margin-bottom: 8px;
 }
 
-/* Overlay stays */
-.contact-section .hero-image .overlay {
+.tick-list li::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  left: 2px;
+  top: 0.62em;
+  width: 9px;
+  height: 9px;
+  background: var(--teal);
+  transform: rotate(45deg);
 }
 
-/* HERO LOGO */
-.hero-logo {
+
+/* =================================================
+   7. WORK
+================================================= */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* the box that holds a screenshot. It keeps its shape even before the image loads */
+.work-shot {
+  aspect-ratio: 4 / 3;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.work-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  font-size: 0.9rem;   /* size of the alt text shown if the image is missing */
+  padding: 0;
+}
+
+.work-item h3 {
+  margin-bottom: 8px;
+}
+
+.work-item p {
+  font-size: 1.05rem;
   margin-bottom: 10px;
 }
 
-.hero-logo img {
-  height: 100px;
-  width: auto;
+.work-item a {
+  font-size: 1rem;
+}
+
+.read-more-btn {
   display: block;
-  max-width: 100%;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0 0 8px 0;
+
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  color: var(--teal-dark);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.read-more-btn:hover {
+  color: var(--navy);
+}
+
+.work-link {
+  display: inline-block;
 }
 
 /* =================================================
-   RESPONSIVE
+   8. HOW WE WORK
+   The numbers come from a CSS counter, so if you add
+   or remove a step they renumber themselves.
 ================================================= */
-@media (max-width: 900px) {
-  .hero-split,
-  .contact-section {
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+}
+
+.steps li {
+  counter-increment: step;
+  border-top: 2px solid var(--teal);
+  padding-top: 20px;
+}
+
+.steps li::before {
+  content: counter(step);
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--teal-light);
+  margin-bottom: 16px;
+}
+
+.steps h3 {
+  margin-bottom: 10px;
+}
+
+.steps p {
+  font-size: 1.05rem;
+}
+
+
+/* =================================================
+   9. PRICING
+================================================= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px;
+}
+
+.price-group h3 {
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--navy);
+}
+
+/* one package. Details on the left, price pushed to the right */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+
+.price-detail {
+  font-size: 1rem;
+}
+
+.price-amount {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+
+/* =================================================
+   10. TESTIMONIALS (only used if you switch the section on)
+================================================= */
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+.quote blockquote {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--navy);
+  border-left: 3px solid var(--teal);
+  padding-left: 24px;
+}
+
+.quote figcaption {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  margin-top: 16px;
+  padding-left: 27px;
+}
+
+
+/* =================================================
+   11. CONTACT
+================================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-grid h2 {
+  margin-bottom: 24px;
+}
+
+.contact-grid .btn {
+  margin-top: 32px;
+}
+
+.contact-details {
+  font-style: normal;   /* the address tag is italic by default */
+  border-top: 2px solid var(--navy);
+}
+
+.contact-details p {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+
+/* =================================================
+   12. FOOTER
+================================================= */
+.site-footer {
+  background: var(--navy);
+  color: #B9C6D0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-row img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-nav a {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 0.9rem;
+}
+
+
+/* =================================================
+   13. PHONES AND TABLETS
+   Below 860px wide, everything that sat side by side stacks up.
+================================================= */
+@media (max-width: 860px) {
+  body { font-size: 1.0625rem; }
+
+  .band {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  h2 { margin-bottom: 28px; }
+
+  /* hide the text links, keep the logo and the button */
+  .main-nav { display: none; }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .hero-grid,
+  .service-row,
+  .work-grid,
+  .pricing-grid,
+  .quote-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
-    text-align: center;
-    padding: 40px 20px;
   }
 
-  .hero-text .hero-sub {
-    margin: 30px auto;
+  .hero-grid { gap: 48px; }
+
+  .hero-panel {
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
   }
 
-  .who-we-are .content {
-    text-align: center;
-    padding: 0 20px;
-  }
+  .crystal { width: 34%; }
 
-  .services .grid,
-  .dark .grid,
-  .section.bg-img .grid,
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
+  .service-row { gap: 16px; }
 
-  .hero-logo img {
-    height: 40px;
-  }
+  .steps { grid-template-columns: repeat(2, 1fr); }
 
-  .pricing-section {
-    padding: 70px 20px;
-  }
-
-  .pricing-sub {
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-  }
-
-  .pricing-card {
-    padding: 15px;
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
+@media (max-width: 520px) {
+  .steps { grid-template-columns: 1fr; }
+
+  .logo-link img { height: 30px; }
+}

@@ -1,165 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <meta charset="UTF-8" />
-  <title>Espatika | AI, Analytics & Web Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <!-- charset must be the very first thing so the browser reads the text correctly -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- What shows on the browser tab and as the blue link on Google -->
+  <title>Espatika | Websites, SEO, AI tools and data analysis for small businesses</title>
+
+  <!-- The grey text under the link on Google -->
+  <meta name="description" content="Espatika is a small London studio that builds fast websites, custom AI tools and data analysis for small businesses. Book a free call.">
+
+  <!-- What shows when someone shares the link on WhatsApp, LinkedIn and so on -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.espatika.com/">
+  <meta property="og:title" content="Espatika | Websites, AI tools and data analysis">
+  <meta property="og:description" content="A small London studio that builds fast websites, custom AI tools and data analysis for small businesses.">
+  <!-- Make a 1200 x 630 image, save it as assets/share.png, then remove the comment marks on the next line -->
+  <!-- <meta property="og:image" content="https://www.espatika.com/assets/share.png"> -->
+
+  <!-- The crystal on the browser tab -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Fonts. Sora for headings (same as the logo), Source Serif 4 for reading text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero-split">
-    <div class="hero-text fade-in">
-      <!-- Logo above ESPATIKA heading -->
-      <div class="hero-logo">
-        <img src="assets/icons/Espatikalogo.png" alt="Espatika Logo">
-      </div>
+  <!-- Lets keyboard users jump past the menu. Invisible until you press Tab -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <h1>ESPATIKA</h1>
-      <p class="tagline">Build Smarter. Decide Faster. Scale Confidently.</p>
-      <p class="hero-sub">
-        AI-driven app development, data science & business analytics,
-        and high-performance websites.
-      </p>
-      <a href="#contact" class="btn dark-btn">Learn More</a>
-    </div>
 
-    <div class="hero-image fade-in">
-      <img src="assets/heroimg.png" alt="Espatika hero image">
+  <!-- ===================== MENU BAR ===================== -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a href="#top" class="logo-link">
+        <img src="assets/icons/espatika-logo.svg" alt="Espatika" width="164" height="36">
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">How we work</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-small">Book a free call</a>
     </div>
   </header>
 
-  <!-- WHO WE ARE -->
-  <section class="section bg-img full-height who-we-are" style="background-image:url('assets/laptopcloseup.png')">
-    <div class="overlay"></div>
-    <div class="content fade-in">
-      <h2>Who We Are</h2>
-      <h3><b>Espatika provides specialised digital services for modern businesses.</b></h3>
-      <p>
-        Our offerings include AI-powered application development, data science and business analytics consulting, and static website development.
-        We focus on clarity, technical excellence, and practical results, helping businesses and individuals build, analyse, and present their digital presence with confidence.
-      </p>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="section services full-height">
-    <h2 class="fade-in">Our Services</h2>
-    <div class="grid">
-      <div class="card service fade-in" style="background-image:url('assets/ourservicesa.png')">
-        <div class="overlay"></div>
-        <h3>AI Built for Impact</h3>
-        <p>Custom AI applications built around real business needs delivering practical, scalable value.</p>
-      </div>
-      <div class="card service fade-in" style="background-image:url('assets/ourservicess.png')">
-        <div class="overlay"></div>
-        <h3>Modern Static Websites</h3>
-        <p>We build fast, reliable static websites focused on usability, credibility, and performance.</p>
-      </div>
-      <div class="card service fade-in" style="background-image:url('assets/ourservicesd.png')">
-        <div class="overlay"></div>
-        <h3>Decision Analytics</h3>
-        <p>We help turn data into clear insights that support confident, informed decisions.</p>
-      </div>
-    </div>
-  </section>
+  <main id="main">
 
-    <!-- PRICING -->
-  <section class="section pricing-section full-height">
-    <h2 class="fade-in">Pricing</h2>
-    <p class="pricing-sub fade-in">
-      Transparent service packages for websites and data solutions.
-    </p>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
 
-    <div class="pricing-grid">
-      <div class="pricing-card fade-in">
-        <img src="assets/websiteservices.png" alt="Website services pricing">
-      </div>
-
-      <div class="pricing-card fade-in">
-        <img src="assets/dataservices.png" alt="Data services pricing">
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="section dark full-height">
-    <h2 class="fade-in">Why Choose Us</h2>
-    <div class="grid why-grid">
-      <div class="card fade-in">
-        <h3><b>We are global.</b></h3>
-        <i data-lucide="globe"></i>
-        <p>No matter where you are, we've got you covered.</p>
-      </div>
-      <div class="card fade-in">
-        <h3><b>We value our clients.</b></h3>
-        <i data-lucide="clock"></i>
-        <p>Virtual assistance. Talk to us about any concerns, 24/7.</p>
-      </div>
-      <div class="card fade-in">
-        <h3><b>We use top-rate systems.</b></h3>
-        <i data-lucide="shield-check"></i>
-        <p>Easy peasy UI. Our interface is simple and easy to use.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section bg-img full-height testimonials" style="background-image:url('assets/beforetestimonialsbg.png')">
-    <div class="overlay"></div>
-    <div class="content fade-in">
-      <h2>Client Testimonials</h2>
-      <div class="grid">
-        <div class="testimonial">
-          “Exceptional web and AI solutions delivered with clarity and precision.”
-          <span>— Esha Dharohar, Wright Co.</span>
+        <div class="hero-text">
+          <h1>Websites, SEO, AI tools and data analysis for small businesses</h1>
+          <p class="lead">
+            Espatika is a small studio based in London. 
+            Tell us the problem. We scope it, build it, and hand it over 
+            with clear documentation — so you’re never stuck depending on us.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn">Book a free call</a>
+            <a href="#work" class="text-link">See our work</a>
+          </div>
+          <!-- Check this number is still right before you publish -->
+          <p class="hero-fact">Delivering client projects since 2025.</p>
         </div>
-        <div class="testimonial">
-          “A fast, high-performance website that strengthened our online presence.”
-          <span>— Vihaan Kumar, Planwell Financial</span>
+
+        <!-- The big crystal. Each face has its own class so the CSS can slide it into place -->
+        <div class="hero-panel" aria-hidden="true">
+          <svg class="crystal" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="face face-top-left"  points="50,2 18,26 50,40"        fill="#7DCEC4"/>
+            <polygon class="face face-top-right" points="50,2 82,26 50,40"        fill="#41B7A9"/>
+            <polygon class="face face-left"      points="18,26 50,40 50,98 18,74" fill="#12A594"/>
+            <polygon class="face face-right"     points="82,26 50,40 50,98 82,74" fill="#0F7471"/>
+          </svg>
         </div>
-        <div class="testimonial">
-          “Guided us toward an AI solution that added real business value.”
-          <span>— Raju Singh, Harmeet Express</span>
+
+      </div>
+    </section>
+
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="band" id="services">
+      <div class="wrap">
+        <h2>What we do</h2>
+
+        <div class="service-row">
+          <h3>Websites</h3>
+          <div>
+            <p>
+              Fast websites that look right on any phone, show up on Google,
+              and cost very little to host. Good for a business that needs to look
+              credible online and be easy to contact.
+            </p>
+            <ul class="tick-list">
+              <li>Design and build</li>
+              <li>Phone and tablet layout</li>
+              <li>Domain and hosting set up for you</li>
+              <li>Basic search engine setup</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-row">
+          <h3>SEO</h3>
+          <div>
+            <p>
+              Get your website properly set up for Google to find, understand, and index. 
+              We audit what’s holding it back, fix the technical and on-page SEO, 
+              and show you what changed with clear before-and-after reporting.
+            </p>
+            <ul class="tick-list">
+              <li>Google Search Console setup</li>
+              <li>Sitemap setup and submission</li>
+              <li>Keyword and on-page SEO optimisation</li>
+              <li>Structured data setup</li>
+              <li>Indexing and technical SEO fixes</li>
+              <li>Before-and-after SEO audit report</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="service-row">
+          <h3>AI tools</h3>
+          <div>
+            <p>
+              Custom tools built on language models, shaped around one job in your business.
+              For example, an assistant that answers questions from your own documents,
+              or a tool that drafts routine replies for your team to check and send.
+            </p>
+            <ul class="tick-list">
+              <li>A working prototype first, so you can try it early</li>
+              <li>Live hosting once you are happy</li>
+              <li>Notes on how it works and what it costs to run</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <h3>Data analysis</h3>
+          <div>
+            <p>
+              We take your sales or operations data and answer one clear business question.
+              What will demand look like next quarter? Which customers are likely to leave?
+              What is really driving your results?
+            </p>
+            <ul class="tick-list">
+              <li>We agree the question with you before touching the data</li>
+              <li>Data cleaning, forecasting and prediction models</li>
+              <li>Findings explained in plain language, with a written handover</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===================== WORK ===================== -->
+    <!-- Add three screenshots to the assets folder with the file names used below.
+         Replace every line in [square brackets] with the real details.
+         Only show a project if the client is happy for you to. -->
+    <section class="band band-ice" id="work">
+      <div class="wrap">
+        <h2>Recent work</h2>
+
+        <div class="work-grid">
+
+          <article class="work-item">
+  <div class="work-shot">
+    <img src="assets/work-shaavik.png" 
+         alt="Screenshot of the Shaavik Legal website" 
+         loading="lazy">
+  </div>
+
+  <h3>Shaavik Legal</h3>
+
+  <p class="review">
+    Espatika took the time to understand what Shaavik Legal actually needed rather than 
+    just building us a generic website.
+
+    <span class="review-more" hidden>
+      They helped turn a fairly complex range of legal 
+    and business services into something clear, professional and easy for clients to navigate.
+      The whole process was straightforward, and we now have a website that feels credible 
+      and genuinely represents the business.
+    </span>
+  </p>
+
+  <button class="read-more-btn" type="button" aria-expanded="false">
+    Read more
+  </button>
+
+  <a class="work-link"
+     href="https://www.shaaviklegal.co.uk/"
+     target="_blank"
+     rel="noopener noreferrer">
+    Visit shaaviklegal.co.uk
+  </a>
+</article>
+
+          <article class="work-item">
+  <div class="work-shot">
+    <img src="assets/work-beyondrealms.png" 
+         alt="Screenshot of the Beyond Realms website" 
+         loading="lazy">
+  </div>
+
+  <h3>Beyond Realms</h3>
+
+  <p class="review">
+    I had a very specific feeling I wanted for Beyond Realms, and Espatika really understood it.
+
+    <span class="review-more" hidden>
+      They created a website that feels like me and my work while still making it simple for people 
+      to understand my services and book a session. I especially appreciated how much thought went 
+      into the little details and the overall client journey.
+    </span>
+  </p>
+
+  <button class="read-more-btn" type="button" aria-expanded="false">
+    Read more
+  </button>
+
+  <a class="work-link"
+     href="https://beyondrealms.online/"
+     target="_blank"
+     rel="noopener noreferrer">
+    Visit beyondrealms.online
+  </a>
+</article>
+
+
+<article class="work-item">
+  <div class="work-shot">
+    <img src="assets/work-holisticharmony.png" 
+         alt="Screenshot of Holistic Harmony with Binju website" 
+         loading="lazy">
+  </div>
+
+  <h3>Holistic Harmony with Binju</h3>
+
+  <p class="review">
+    I offer many different things through Holistic Harmony, and I was struggling with how to bring 
+    everything together without making it feel overwhelming.
+
+    <span class="review-more" hidden>
+      Espatika organised it beautifully and created a website that feels warm, calm and true to my work. 
+      My services, Reiki training, events and wellness offerings are now much easier for people to explore 
+      and book.
+    </span>
+  </p>
+
+  <button class="read-more-btn" type="button" aria-expanded="false">
+    Read more
+  </button>
+
+  <a class="work-link"
+     href="https://holisticharmonywithbinju.com"
+     target="_blank"
+     rel="noopener noreferrer">
+    Visit holisticharmonywithbinju.com
+  </a>
+</article>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="hero-split contact-section full-height" id="contact">
-    <div class="hero-text fade-in">
-      <h2>Let’s work together</h2>
-      <p>Book a free consultation</p>
 
-      <div class="contact">
-        <p><strong>Phone:</strong> 07927 510839</p>
-        <p><strong>Email:</strong> info@espatika.com</p>
-        <p>Decision Analytics</p>
-        <p><strong>Website:</strong> <a href="https://thequantivelab.com" target="_blank" rel="noopener noreferrer">thequantivelab.com</a></p>
-        <p><strong>Email:</strong> thequantivelab@gmail.com</p>
+    <!-- ===================== HOW WE WORK ===================== -->
+    <!-- This is a real sequence, so it is a numbered list. The numbers are drawn by the CSS -->
+    <section class="band band-navy" id="process">
+      <div class="wrap">
+        <h2>How we work</h2>
+
+        <ol class="steps">
+          <li>
+            <h3>Free call</h3>
+            <p>We talk through what you need and whether we are the right fit. It takes 30 minutes and costs nothing.</p>
+          </li>
+          <li>
+            <h3>Written scope and price</h3>
+            <p>You get a short document that says what we will build, by when, and what it costs. Nothing starts until you agree.</p>
+          </li>
+          <li>
+            <h3>Build</h3>
+            <p>We share progress as we go, so there are no surprises at the end.</p>
+          </li>
+          <li>
+            <h3>Handover</h3>
+            <p>You get the finished work and plain notes on how it runs.</p>
+          </li>
+        </ol>
       </div>
+    </section>
 
-      <a href="mailto:info@espatika.com" class="btn dark-btn">Get in Touch</a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thequantivelab@gmail.com" target="_blank" rel="noopener noreferrer" class="btn dark-btn">
-        Email TheQuantiveLab
-      </a>
+
+    <!-- ===================== PRICING ===================== -->
+    <!-- Type your real packages in here. Copy a price-row block to add one, delete a block to remove one -->
+    <section class="band" id="pricing">
+      <div class="wrap">
+        <h2>Pricing</h2>
+        <p class="section-intro">
+          Fixed packages, so you know the cost before we start.
+          If your project doesn’t fit one of these packages, we’ll provide a custom quote after the free call.
+        </p>
+
+        <div class="pricing-grid">
+
+          <div class="price-group">
+            <h3>Websites</h3>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">Starter Website</p>
+                <p class="price-detail">Simple, professional website for a small business.</p>
+              </div>
+              <p class="price-amount">£495</p>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">Custom Business Website</p>
+                <p class="price-detail">A more tailored website for businesses with multiple services or more complex content.</p>
+              </div>
+              <p class="price-amount">£795</p>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">Website + Payments/Bookings</p>
+                <p class="price-detail">For businesses that need payments, bookings or other integrations.</p>
+              </div>
+              <p class="price-amount">From £1,095</p>
+            </div>
+          </div>
+
+          <div class="price-group">
+            <h3>SEO</h3>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">SEO Starter</p>
+                <p class="price-detail">Get your website properly connected to Google and fix the essentials needed for indexing and search visibility.</p>
+              </div>
+              <p class="price-amount">£199</p>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">SEO Optimisation</p>
+                <p class="price-detail">Improve your website’s pages, keywords and technical setup so Google can understand and rank the content more effectively.</p>
+              </div>
+              <p class="price-amount">£349</p>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">Complete SEO Setup</p>
+                <p class="price-detail">A full technical and on-page SEO overhaul with structured data, indexing fixes and before-and-after audit reporting.</p>
+              </div>
+              <p class="price-amount">From £499</p>
+            </div>
+          </div>
+
+          <div class="price-group">
+            <h3>Data and AI</h3>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">Analytics Starter</p>
+                <p class="price-detail">Set up the basics so you can clearly see how your website or business is performing.</p>
+              </div>
+              <p class="price-amount">£149</p>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">Business Analytics</p>
+                <p class="price-detail">Turn your data into clear insights about performance, customers and opportunities for improvement.</p>
+              </div>
+              <p class="price-amount">£399</p>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <p class="price-name">Forecasting & Insights</p>
+                <p class="price-detail">Use historical data to forecast demand, sales or performance and support better business planning.</p>
+              </div>
+              <p class="price-amount">From £499</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== TESTIMONIALS (switched off) ===================== -->
+    <!-- This section is hidden from visitors because it sits inside a comment.
+         Only switch it on with quotes from real clients who agreed to be named.
+         To switch it on, delete the line that says START and the line that says END.
+
+    START
+    <section class="band band-ice" id="clients">
+      <div class="wrap">
+        <h2>What clients say</h2>
+        <div class="quote-grid">
+          <figure class="quote">
+            <blockquote>[Real quote from a client]</blockquote>
+            <figcaption>[Name], [Company]</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>[Real quote from a client]</blockquote>
+            <figcaption>[Name], [Company]</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    END
+    -->
+
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="band band-ice" id="contact">
+      <div class="wrap contact-grid">
+
+        <div>
+          <h2>Book a free call</h2>
+          <p class="lead">
+            Send us a few lines about what you need. We will reply to set up a
+            30 minute video call. It is free and there is no obligation.
+          </p>
+          <a href="mailto:info@espatika.com?subject=Free%20call%20request" class="btn">Email us to book</a>
+        </div>
+
+        <address class="contact-details">
+          <p>
+            <span class="contact-label">Email</span>
+            <a href="mailto:info@espatika.com">info@espatika.com</a>
+          </p>
+          <p>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+447927510839">+44 7927 510839</a>
+          </p>
+          <p>
+            <span class="contact-label">Based in</span>
+            London, working with clients anywhere
+          </p>
+        </address>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <img src="assets/icons/espatika-logo-white.svg" alt="Espatika" width="146" height="32">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="copyright">© 2026 Espatika. All rights reserved.</p>
     </div>
-
-    <div class="hero-image fade-in" style="background-image:url('./assets/contactusimg.png')">
-      <div class="overlay"></div>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Espatika. All rights reserved.
   </footer>
+<script>
+  document.querySelectorAll('.read-more-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const review = this.previousElementSibling;
+      const moreText = review.querySelector('.review-more');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
-  <script>
-    lucide.createIcons();
-  </script>
+      moreText.hidden = isExpanded;
+      this.setAttribute('aria-expanded', String(!isExpanded));
+      this.textContent = isExpanded ? 'Read more' : 'Show less';
+    });
+  });
+</script>
 </body>
 </html>
